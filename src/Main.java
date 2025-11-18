@@ -16,6 +16,44 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
         API api = new API();
+        /*
+        sout(
+        """
+            1 - Fetch Artista
+            2 - Fetch artista per ID
+            3 - Inserisci Artista
+            4 - Modifica Artista
+            5 - Elimina Artista
+        """
+        );
+        Scanner scan = new Scanner(System.in);
+        int scelta = scanner.nextInt();
+        scanner.nextLine();
+
+        switch(scelta){
+            case 1:
+            sout api.fetchArtista
+            break;
+            case 2:
+            sout "scegli id"
+            sout api.fetchArtista(scanner.nextInt()
+            scanner.nextLine()
+
+
+
+            di questi sotto
+
+        Artista artistaInserito = api.postArtista(new Artista("DJFede","Italia","Reaggeton"));
+        System.out.println(api.fetchArtista(artistaInserito.getId()));
+        Artista artistaModificato = api.putArtista(new Artista("DJFede","Italia","EDM"));
+
+        sout api.fetchArtista(artistaModificatro.getID())
+
+        if(api.deleteArtista(aristamodificato.GetID()))
+            sout "artista eliminato con successo"
+        sout api.fetchArtisti()
+        */
+
         Scanner scan = new Scanner(System.in);
 
         Database db = null;

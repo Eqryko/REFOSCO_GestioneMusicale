@@ -158,7 +158,7 @@ public class API {
         }
     }
 
-    public void eliminaArtista(int id) {
+    public void eliminaArtista(int id) { //metterlo boolean
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(endpointBase + "artisti/" + id))
@@ -166,6 +166,7 @@ public class API {
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
+            // mettere nel main tramite il boolean
             if (response.statusCode() == 204 || response.statusCode() == 200) {
                 System.out.println("Artista eliminato con successo");
             } else {
@@ -222,4 +223,35 @@ public class API {
             return null;
         }
     }
+    /*
+    public void postArtista(Artista artista) {
+        Gson serializzatore = new Gson();
+        String jsonBody = serializzatore.toJson(artista);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(endpointBase + "artisti"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .build();
+
+        try {
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            //DESERIALIZZARE
+            Gson deserializzatore = new Gson();
+            Artista artista = deserializzatore.fromJson(response.body(), Canzone[].class);
+
+            //CREARE STRINGA
+            StringBuilder result = new StringBuilder();
+            for(Canzone canzone : canzoni){
+                result.append(canzone.toString());
+            }
+
+            return deserializzatore.fromJson(response.body(), Artista);
+
+        } catch (IOException | InterruptedException e) {
+            System.err.println("Errore nella richiesta API: " + e.getMessage());
+            return null;
+        }
+    }*/
 }
